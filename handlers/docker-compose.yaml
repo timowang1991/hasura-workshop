@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  handler-server:
+    working_dir: /app
+    image: node:12.18.0-alpine
+    ports:
+        - "3000:3000"
+    volumes:
+        - ".:/app"
+    command:
+        - /bin/sh
+        - -c 
+        - |
+            npm i
+            npm run dev
+
